@@ -3,128 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nextox – Secure Infrastructure</title>
+    <title>Nextox | Rebranded from Phlipper AG</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #0f172a;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #020617;
             color: #f8fafc;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
-            /* Ein professionelles, dunkles Tech-Hintergrundbild */
-            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
-                              url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070');
-            background-size: cover;
-            background-position: center;
+            background-image: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+        }
+
+        /* Subtiler Scanline-Effekt für den Tech-Look */
+        body::before {
+            content: " ";
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+            background-size: 100% 4px, 3px 100%;
+            z-index: 2;
+            pointer-events: none;
         }
 
         .container {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 24px;
             text-align: center;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            padding: 4rem;
+            border-radius: 32px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            max-width: 650px;
         }
 
-        .logo-placeholder {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
-            border-radius: 20px;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: white;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        .rebrand-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4rem;
+            color: #38bdf8;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: -3px;
+            margin-bottom: 1rem;
+            background: linear-gradient(to bottom, #fff 40%, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .status-badge {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            color: #38bdf8;
-            padding: 0.4rem 1rem;
-            border-radius: 99px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
+        .slogan {
+            font-size: 1.4rem;
+            color: #f1f5f9;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            letter-spacing: 1px;
         }
 
-        p {
-            color: #94a3b8;
-            font-size: 1.125rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .footer {
-            font-size: 0.875rem;
+        .origin-info {
+            font-size: 0.9rem;
             color: #64748b;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 1.5rem;
         }
 
-        .dot {
-            height: 8px;
-            width: 8px;
-            background-color: #38bdf8;
-            border-radius: 50%;
+        .origin-info strong {
+            color: #94a3b8;
+            letter-spacing: 1px;
+        }
+
+        .glow-dot {
             display: inline-block;
-            margin-right: 6px;
-            box-shadow: 0 0 8px #38bdf8;
+            width: 8px;
+            height: 8px;
+            background: #38bdf8;
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 15px #38bdf8;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="logo-placeholder">X</div>
-        <div class="status-badge">
-            <span class="dot"></span> Wartungsarbeiten
-        </div>
-        <h1>Nextox.ch</h1>
-        <p>
-            Wir bereiten unsere Systeme auf den Launch vor. <br>
-            Sicherheit und Performance für die Schweiz.
-        </p>
-        <div class="footer">
-            &copy; 2026 Nextox Switzerland. All rights reserved.
+        <div class="rebrand-label">Corporate Rebrand</div>
+        <h1>Nextox</h1>
+        <div class="slogan">Security. Evolution. Power.</div>
+        
+        <div class="origin-info">
+            <span class="glow-dot"></span>
+            Legacy Excellence: <strong>PHLIPPER AG</strong> is now <strong>NEXTOX</strong>
         </div>
     </div>
 
