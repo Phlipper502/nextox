@@ -6,22 +6,23 @@
     <title>Wartungsarbeiten | Nextox | Rebranding von Phlipper AG</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #050a15;
-            --bg-secondary: #0f172a;
-            --accent-primary: #1e40af;
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #121932;
+            --accent-primary: #1e3a8a;
             --accent-secondary: #3b82f6;
-            --accent-glow: #2563eb;
+            --accent-glow: #1d4ed8;
             --success: #059669;
             --warning: #d97706;
             --text-primary: #f8fafc;
             --text-secondary: #e2e8f0;
             --text-muted: #94a3b8;
-            --border-color: rgba(30, 64, 175, 0.2);
-            --glass-bg: rgba(15, 23, 42, 0.9);
-            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1d4ed8 100%);
+            --border-color: rgba(30, 58, 138, 0.3);
+            --glass-bg: rgba(18, 25, 50, 0.85);
+            --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1d4ed8 100%);
+            --gradient-status: linear-gradient(135deg, #059669 0%, #10b981 100%);
         }
 
         * { 
@@ -51,22 +52,22 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 15% 85%, rgba(30, 64, 175, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 75% 25%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 45% 55%, rgba(5, 150, 105, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(5, 150, 105, 0.06) 0%, transparent 50%);
             z-index: 1;
-            animation: enterpriseMatrix 25s ease-in-out infinite;
+            animation: enterpriseMatrix 30s ease-in-out infinite;
         }
 
         @keyframes enterpriseMatrix {
-            0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
-            33% { opacity: 0.6; transform: scale(1.02) rotate(0.5deg); }
-            66% { opacity: 0.5; transform: scale(1.01) rotate(-0.3deg); }
+            0%, 100% { opacity: 0.45; transform: scale(1) rotate(0deg); }
+            33% { opacity: 0.65; transform: scale(1.03) rotate(0.3deg); }
+            66% { opacity: 0.55; transform: scale(1.02) rotate(-0.2deg); }
         }
 
         /* Code Stream Animation */
         .code-stream {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -78,18 +79,20 @@
 
         .code-line {
             position: absolute;
-            font-family: 'Courier New', monospace;
-            font-size: 11px;
-            color: rgba(59, 130, 246, 0.12);
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            font-size: 10px;
+            color: rgba(59, 130, 246, 0.15);
             white-space: nowrap;
-            animation: codeStream 20s linear infinite;
+            animation: codeStream 25s linear infinite;
+            font-weight: 400;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.1);
         }
 
         @keyframes codeStream {
-            0% { transform: translateY(100vh); opacity: 0; }
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
             5% { opacity: 1; }
             95% { opacity: 1; }
-            100% { transform: translateY(-100%); opacity: 0; }
+            100% { transform: translateY(-100%) translateX(50px); opacity: 0; }
         }
 
         .container {
@@ -98,13 +101,13 @@
             border-radius: 24px;
             background: var(--glass-bg);
             border: 1px solid var(--border-color);
-            backdrop-filter: blur(40px) saturate(140%);
+            backdrop-filter: blur(50px) saturate(150%);
             box-shadow: 
-                0 35px 80px -20px rgba(0, 0, 0, 0.8),
-                0 0 0 1px rgba(30, 64, 175, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+                0 40px 100px -25px rgba(0, 0, 0, 0.85),
+                0 0 0 1px rgba(30, 58, 138, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             z-index: 10;
-            max-width: 800px;
+            max-width: 900px;
             position: relative;
             overflow: hidden;
         }
@@ -115,9 +118,9 @@
             top: 0;
             left: -100%;
             width: 100%;
-            height: 2px;
+            height: 3px;
             background: var(--gradient-primary);
-            animation: scanline 4s infinite;
+            animation: scanline 5s infinite;
         }
 
         @keyframes scanline {
@@ -129,81 +132,91 @@
         .maintenance-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            font-size: 0.8rem;
+            gap: 1rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.8px;
             color: var(--warning);
-            margin-bottom: 2.5rem;
-            background: rgba(217, 119, 6, 0.15);
-            padding: 0.75rem 1.5rem;
+            margin-bottom: 3rem;
+            background: rgba(217, 119, 6, 0.12);
+            padding: 1rem 1.75rem;
             border-radius: 50px;
-            border: 1px solid rgba(217, 119, 6, 0.3);
-            backdrop-filter: blur(12px);
-            animation: maintenancePulse 2s ease-in-out infinite;
+            border: 1px solid rgba(217, 119, 6, 0.25);
+            backdrop-filter: blur(15px);
+            animation: maintenancePulse 2.5s ease-in-out infinite;
         }
 
         @keyframes maintenancePulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(217, 119, 6, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(217, 119, 6, 0.5); }
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(217, 119, 6, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1); 
+            }
+            50% { 
+                box-shadow: 0 0 35px rgba(217, 119, 6, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15); 
+            }
         }
 
         .maintenance-icon {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             background: 
                 conic-gradient(from 0deg, #d97706 0deg 120deg, #f59e0b 120deg 240deg, #fbbf24 240deg 360deg);
-            border-radius: 3px;
+            border-radius: 4px;
             mask: 
-                radial-gradient(circle 4px at 6px 6px, #000 100%, transparent 0),
-                radial-gradient(circle 4px at 14px 6px, #000 100%, transparent 0),
-                radial-gradient(circle 4px at 10px 14px, #000 100%, transparent 0);
+                radial-gradient(circle 5px at 7px 7px, #000 100%, transparent 0),
+                radial-gradient(circle 5px at 17px 7px, #000 100%, transparent 0),
+                radial-gradient(circle 5px at 12px 17px, #000 100%, transparent 0);
             mask-composite: exclude;
+            animation: iconRotate 4s linear infinite;
+        }
+
+        @keyframes iconRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         h1 {
-            font-size: clamp(4rem, 9vw, 6rem);
+            font-size: clamp(4.5rem, 10vw, 7rem);
             font-weight: 900;
-            letter-spacing: -2px;
-            margin-bottom: 1rem;
+            letter-spacing: -3px;
+            margin-bottom: 1.5rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             position: relative;
-            text-shadow: 0 0 60px rgba(30, 64, 175, 0.4);
+            text-shadow: 0 0 80px rgba(30, 58, 138, 0.5);
         }
 
         .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 400;
             color: var(--text-secondary);
-            margin-bottom: 3.5rem;
-            letter-spacing: 0.3px;
-            max-width: 600px;
+            margin-bottom: 4rem;
+            letter-spacing: 0.5px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .status-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-            max-width: 700px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 5rem 0;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .status-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            backdrop-filter: blur(20px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            backdrop-filter: blur(25px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
@@ -217,13 +230,14 @@
             height: 4px;
             background: var(--gradient-primary);
             transform: scaleX(0);
-            transition: transform 0.4s ease;
+            transition: transform 0.5s ease;
         }
 
         .status-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(59, 130, 246, 0.3);
-            box-shadow: 0 25px 50px rgba(30, 64, 175, 0.15);
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 30px 60px rgba(30, 58, 138, 0.2);
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .status-card:hover::before {
@@ -231,50 +245,75 @@
         }
 
         .status-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            margin: 0 auto 1.5rem;
+            width: 64px;
+            height: 64px;
+            border-radius: 20px;
+            margin: 0 auto 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 900;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .status-maintenance .status-icon {
             background: rgba(217, 119, 6, 0.2);
             color: #f59e0b;
-            border: 2px solid rgba(217, 119, 6, 0.4);
+            border: 2px solid rgba(217, 119, 6, 0.5);
         }
 
         .status-rebrand .status-icon {
-            background: rgba(5, 150, 105, 0.2);
-            color: #10b981;
-            border: 2px solid rgba(5, 150, 105, 0.4);
+            background: var(--gradient-status);
+            color: white;
+            border: 2px solid rgba(5, 150, 105, 0.5);
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background: var(--gradient-status); }
+            50% { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
         }
 
         .status-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 1rem;
-            letter-spacing: -0.3px;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.4px;
         }
 
         .status-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         .timeline {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 4rem;
-            margin: 4rem 0;
+            gap: 5rem;
+            margin: 5rem 0;
             flex-wrap: wrap;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-primary) 20%, var(--accent-secondary) 50%, var(--accent-primary) 80%, transparent 100%);
+            z-index: 1;
+            animation: timelineProgress 4s ease-in-out infinite;
+        }
+
+        @keyframes timelineProgress {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
         .timeline-item {
@@ -282,93 +321,107 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem 1rem;
-        }
-
-        .timeline-connector {
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, var(--accent-primary) 50%, transparent 100%);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            z-index: 1;
+            padding: 2.5rem 1.5rem;
+            z-index: 2;
         }
 
         .timeline-badge {
-            width: 140px;
-            height: 140px;
-            border-radius: 20px;
+            width: 160px;
+            height: 160px;
+            border-radius: 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            backdrop-filter: blur(20px);
+            letter-spacing: -0.6px;
+            backdrop-filter: blur(25px);
             position: relative;
-            z-index: 2;
-            transition: all 0.4s ease;
+            transition: all 0.5s ease;
             border: 2px solid transparent;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .legacy-badge {
-            background: rgba(107, 114, 128, 0.3);
+            background: rgba(107, 114, 128, 0.25);
             color: var(--text-secondary);
-            border-color: rgba(107, 114, 128, 0.4);
+            border-color: rgba(107, 114, 128, 0.5);
         }
 
         .legacy-badge::after {
             content: '→';
             position: absolute;
-            right: -20px;
+            right: -25px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--accent-primary);
             font-weight: 300;
             animation: arrowFlow 3s ease-in-out infinite;
         }
 
         .new-badge {
-            background: rgba(30, 64, 175, 0.25);
+            background: rgba(30, 58, 138, 0.3);
             color: var(--text-primary);
             border-color: var(--accent-primary);
-            font-size: 1.1rem;
-            transform: scale(1.05);
+            font-size: 1.2rem;
+            transform: scale(1.08);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
         }
 
         @keyframes arrowFlow {
-            0%, 100% { opacity: 0.6; transform: translateY(-50%) translateX(0); }
-            50% { opacity: 1; transform: translateY(-50%) translateX(5px); }
+            0%, 100% { opacity: 0.7; transform: translateY(-50%) translateX(0); }
+            50% { opacity: 1; transform: translateY(-50%) translateX(8px); }
         }
 
         .timeline-badge .label {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             font-weight: 500;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
         }
 
         .timeline-badge .name {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
 
         .footer-notice {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-muted);
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 4rem;
-            max-width: 600px;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 5rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.7;
         }
 
         .highlight {
-            color: var(--accent-primary);
+            color: var(--accent-secondary);
             font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            width: 65%;
+            border-radius: 2px;
+            animation: progressMove 2s ease-in-out infinite;
+        }
+
+        @keyframes progressMove {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(200%); }
         }
 
         /* Particles System */
@@ -386,111 +439,49 @@
             position: absolute;
             border-radius: 50%;
             background: radial-gradient(circle, var(--accent-primary), transparent);
-            animation: particleFloat 8s infinite linear;
+            animation: particleFloat 12s infinite linear;
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         @keyframes particleFloat {
             0% {
-                transform: translateY(100vh) translateX(0) scale(0);
+                transform: translateY(100vh) translateX(0) scale(0) rotate(0deg);
                 opacity: 0;
             }
-            10% { opacity: 1; }
+            10% { opacity: 1; transform: translateY(90vh) translateX(0) scale(0.5) rotate(90deg); }
             90% { opacity: 1; }
             100% {
-                transform: translateY(-20vh) translateX(100px) scale(1);
+                transform: translateY(-30vh) translateX(150px) scale(1) rotate(360deg);
                 opacity: 0;
             }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container { padding: 4rem 2.5rem; margin: 1rem; }
-            .timeline { flex-direction: column; gap: 3rem; }
-            .timeline-connector { display: none; }
-            .status-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-    <div class="code-stream" id="codeStream"></div>
-    <div class="particles" id="particles"></div>
-
-    <div class="container">
-        <div class="maintenance-badge">
-            <div class="maintenance-icon"></div>
-            Systemwartung
-        </div>
-
-        <h1>Wartungsarbeiten</h1>
-        
-        <div class="subtitle">
-            Unsere Infrastruktur wird für die Zukunft optimiert. 
-            Dies ist der Übergang zu unserer neuen Identität.
-        </div>
-
-        <div class="status-grid">
-            <div class="status-card status-maintenance">
-                <div class="status-icon">⚙️</div>
-                <h3>Infrastruktur-Upgrade</h3>
-                <p>Server, Datenbanken und Security-Cluster werden auf modernste Standards aktualisiert. Erwartete Dauer: <strong>4-6 Stunden</strong>.</p>
-            </div>
-            
-            <div class="status-card status-rebrand">
-                <div class="status-icon">🔒</div>
-                <h3>Corporate Rebranding</h3>
-                <p>Phlipper AG wird zu <strong>Nextox</strong> – Next Generation Cybersecurity Excellence.</p>
-            </div>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-badge legacy-badge">
-                    <div class="label">Vergangenheit</div>
-                    <div class="name">Phlipper AG</div>
-                </div>
-            </div>
-            
-            <div class="timeline-connector"></div>
-            
-            <div class="timeline-item">
-                <div class="timeline-badge new-badge">
-                    <div class="label">Jetzt</div>
-                    <div class="name">Nextox</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-notice">
-            <strong>Status:</strong> <span class="highlight">Wartung läuft</span> | 
-            <strong>ETA:</strong> <span class="highlight">ca. 18:00 Uhr</span><br>
-            Vielen Dank für Ihr Verständnis. Unser Team arbeitet mit höchster Priorität.
-        </div>
-    </div>
-
-    <script>
-        // Erweiterte Code-Stream Animation
-        function createCodeLine() {
-            const codeLine = document.createElement('div');
-            codeLine.className = 'code-line';
-            codeLine.textContent = [
-                'ENCRYPTING... AES-256-GCM', 'FIREWALL UPGRADE v3.2.1', 'SSL/TLS 1.3', 
-                'ZERO TRUST DEPLOYMENT', 'THREAT INTEL SYNC', 'SIEM OPTIMIZATION',
-                'PHLIPPER → NEXTOX MIGRATION', 'BACKUP VERIFICATION 100%', 'CLUSTER SCALING'
-            ][Math.floor(Math.random() * 9)];
-            
-            codeLine.style.left = Math.random() * 100 + '%';
-            codeLine.style.animationDuration = (15 + Math.random() * 10) + 's';
-            codeLine.style.animationDelay = Math.random() * 5 + 's';
-            
-            document.getElementById('codeStream').appendChild(codeLine);
-            
-            setTimeout(() => codeLine.remove(), 30000);
+        /* Live Status Indicator */
+        .live-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--success);
+            padding: 0.75rem 1.25rem;
+            background: rgba(5, 150, 105, 0.15);
+            border-radius: 20px;
+            border: 1px solid rgba(5, 150, 105, 0.3);
+            backdrop-filter: blur(15px);
         }
 
-        // Particles System
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            const size = Math.random() * 6 + 2;
-            particle.style.width = size + 'px';
-            particle
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: statusPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2
