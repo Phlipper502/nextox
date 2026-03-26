@@ -3,123 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextOX | Under Maintenance</title>
+    <title>Nextox.ch – Wartungsmodus</title>
     <style>
-        :root {
-            --primary: #38bdf8;
-            --secondary: #818cf8;
-            --bg: #020617;
-        }
-
         body {
             margin: 0;
-            background-color: var(--bg);
-            color: #f8fafc;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #f4f7f6;
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Der Gitter-Hintergrund aus deinem Logo-Konzept */
-        .grid {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px), 
-                              linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            transform: perspective(500px) rotateX(60deg);
-            top: -50%;
-            z-index: -1;
-            animation: moveGrid 20s linear infinite;
-        }
-
-        @keyframes moveGrid {
-            0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
-            100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
-        }
-
-        .container {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            padding: 3.5rem;
-            border-radius: 2rem;
-            box-shadow: 0 0 100px rgba(56, 189, 248, 0.1);
             text-align: center;
-            max-width: 550px;
-            position: relative;
         }
 
-        .logo-x {
-            font-size: 6rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.6));
-            margin-bottom: 0.5rem;
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 600px;
+            width: 90%;
         }
 
-        h1 { font-size: 2.2rem; margin: 0; letter-spacing: -1px; }
-        
-        .maintenance-tag {
-            color: #ef4444; /* Rot für Warnung/Wartung */
-            text-transform: uppercase;
-            letter-spacing: 0.4rem;
-            font-size: 0.75rem;
-            font-weight: 800;
-            margin: 1rem 0 2rem 0;
-            display: block;
-        }
-
-        p { color: #94a3b8; line-height: 1.6; font-size: 1.1rem; }
-
-        .status-box {
-            background: rgba(0, 0, 0, 0.3);
+        .hero-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
             border-radius: 12px;
-            padding: 1rem;
-            margin-top: 2rem;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.85rem;
-            color: var(--primary);
-            border-left: 3px solid var(--primary);
+            margin-bottom: 30px;
         }
 
-        .shout-out {
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            right: 0;
-            font-size: 0.7rem;
-            color: rgba(148, 163, 184, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #1a202c;
+        }
+
+        .status {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #718096;
+            margin-bottom: 30px;
+        }
+
+        .shoutout {
+            background: #3182ce;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #a0aec0;
         }
     </style>
 </head>
 <body>
-    <div class="grid"></div>
-    <div class="container">
-        <div class="logo-x">X</div>
-        <h1>NextOX</h1>
-        <span class="maintenance-tag">Offline für Wartungsarbeiten</span>
-        
-        <p>
-            Wir bauen gerade die sicherste Infrastruktur für deine Daten auf. 
-            Die Seite ist vorübergehend nicht erreichbar.
-        </p>
 
-        <div class="status-box">
-            > INITIALIZING SECURITY_PROTOCOLS...<br>
-            > ENCRYPTING SWISS_DATA_CORE... [OK]<br>
-            > RELEASING SOON.
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000" alt="Tech" class="hero-image">
+        
+        <div class="status">🛠 WARTUNGSARBEITEN</div>
+        
+        <h1>Nextox.ch</h1>
+        
+        <p>Wir schrauben gerade an der Zukunft der Datensicherheit. Die Seite ist aktuell nicht erreichbar, aber wir sind bald mit voller Power zurück.</p>
+
+        <div class="shoutout">
+            🚀 SHOUT OUT AN ROBIN KERTZ!
         </div>
 
-        <div class="shout-out">Shout Out an Robin Kertz</div>
+        <div class="footer">
+            &copy; 2026 NextOX Switzerland. Alle Systeme werden verschlüsselt.
+        </div>
     </div>
+
 </body>
 </html>
