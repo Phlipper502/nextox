@@ -3,95 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nextox.ch – Wartungsmodus</title>
+    <title>Nextox – Secure Infrastructure</title>
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background: #f4f7f6;
-            color: #333;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
+            /* Ein professionelles, dunkles Tech-Hintergrundbild */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+                              url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 24px;
             text-align: center;
-        }
-
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            max-width: 600px;
+            max-width: 500px;
             width: 90%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-        .hero-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 30px;
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
+            border-radius: 20px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #1a202c;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .status {
+        .status-badge {
             display: inline-block;
-            background: #e2e8f0;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            color: #4a5568;
-            margin-bottom: 20px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            padding: 0.4rem 1rem;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
         }
 
         p {
-            font-size: 1.1rem;
+            color: #94a3b8;
+            font-size: 1.125rem;
             line-height: 1.6;
-            color: #718096;
-            margin-bottom: 30px;
-        }
-
-        .shoutout {
-            background: #3182ce;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
+            margin-bottom: 2rem;
         }
 
         .footer {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: #a0aec0;
+            font-size: 0.875rem;
+            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.5rem;
+        }
+
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #38bdf8;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+            box-shadow: 0 0 8px #38bdf8;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000" alt="Tech" class="hero-image">
-        
-        <div class="status">🛠 WARTUNGSARBEITEN</div>
-        
-        <h1>Nextox.ch</h1>
-        
-        <p>Wir schrauben gerade an der Zukunft der Datensicherheit. Die Seite ist aktuell nicht erreichbar, aber wir sind bald mit voller Power zurück.</p>
-
-        <div class="shoutout">
-            🚀 SHOUT OUT AN ROBIN KERTZ!
+    <div class="container">
+        <div class="logo-placeholder">X</div>
+        <div class="status-badge">
+            <span class="dot"></span> Wartungsarbeiten
         </div>
-
+        <h1>Nextox.ch</h1>
+        <p>
+            Wir bereiten unsere Systeme auf den Launch vor. <br>
+            Sicherheit und Performance für die Schweiz.
+        </p>
         <div class="footer">
-            &copy; 2026 NextOX Switzerland. Alle Systeme werden verschlüsselt.
+            &copy; 2026 Nextox Switzerland. All rights reserved.
         </div>
     </div>
 
