@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NextOX | Secure Data Solutions</title>
+    <title>NextOX | Under Maintenance</title>
     <style>
         :root {
-            --primary: #38bdf8; /* Das helle Blau aus deinem Logo */
-            --secondary: #818cf8; /* Der Violett-Ton */
+            --primary: #38bdf8;
+            --secondary: #818cf8;
             --bg: #020617;
         }
 
         body {
             margin: 0;
-            padding: 0;
             background-color: var(--bg);
             color: #f8fafc;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,7 +23,7 @@
             overflow: hidden;
         }
 
-        /* Hintergrund-Effekt für Tiefe */
+        /* Der Gitter-Hintergrund aus deinem Logo-Konzept */
         .grid {
             position: absolute;
             width: 200%;
@@ -44,83 +43,61 @@
         }
 
         .container {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 4rem;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 3.5rem;
             border-radius: 2rem;
-            box-shadow: 0 0 80px rgba(56, 189, 248, 0.15);
+            box-shadow: 0 0 100px rgba(56, 189, 248, 0.1);
             text-align: center;
-            max-width: 500px;
+            max-width: 550px;
+            position: relative;
         }
 
-        /* Das animierte X - Dein Markenzeichen */
         .logo-x {
-            font-size: 5rem;
+            font-size: 6rem;
             font-weight: 900;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.5));
-            animation: pulse 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.6));
+            margin-bottom: 0.5rem;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            letter-spacing: -0.05rem;
-            margin: 0;
-            color: #fff;
-        }
-
-        .tagline {
-            color: var(--primary);
+        h1 { font-size: 2.2rem; margin: 0; letter-spacing: -1px; }
+        
+        .maintenance-tag {
+            color: #ef4444; /* Rot für Warnung/Wartung */
             text-transform: uppercase;
-            letter-spacing: 0.3rem;
-            font-size: 0.8rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
+            letter-spacing: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            margin: 1rem 0 2rem 0;
+            display: block;
         }
 
-        p {
-            color: #94a3b8;
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
+        p { color: #94a3b8; line-height: 1.6; font-size: 1.1rem; }
 
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 99px;
-            font-size: 0.8rem;
-            font-weight: 600;
+        .status-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
             margin-top: 2rem;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: var(--primary);
+            border-left: 3px solid var(--primary);
         }
 
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            margin-right: 8px;
-            box-shadow: 0 0 10px var(--primary);
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+        .shout-out {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            font-size: 0.7rem;
+            color: rgba(148, 163, 184, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -129,17 +106,20 @@
     <div class="container">
         <div class="logo-x">X</div>
         <h1>NextOX</h1>
-        <div class="tagline">Data Encryption & Safety</div>
+        <span class="maintenance-tag">Offline für Wartungsarbeiten</span>
         
         <p>
-            Wir definieren Sicherheit neu. <br>
-            NextOX bereitet den Launch für den Schweizer Markt vor. 
+            Wir bauen gerade die sicherste Infrastruktur für deine Daten auf. 
+            Die Seite ist vorübergehend nicht erreichbar.
         </p>
 
-        <div class="status-badge">
-            <div class="status-dot"></div>
-            SYSTEMS ENCRYPTING...
+        <div class="status-box">
+            > INITIALIZING SECURITY_PROTOCOLS...<br>
+            > ENCRYPTING SWISS_DATA_CORE... [OK]<br>
+            > RELEASING SOON.
         </div>
+
+        <div class="shout-out">Shout Out an Robin Kertz</div>
     </div>
 </body>
 </html>
