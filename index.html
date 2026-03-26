@@ -1,288 +1,266 @@
+Gemini V1 
+
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wartungsarbeiten | Nextox</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wartungsarbeiten | Nextox | Rebranding von Phlipper AG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e1a;
+            --accent-secondary: #3b82f6;
+            --text-primary: #f8fafc;
+            --text-muted: #94a3b8;
+            --warning: #d97706;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-:root {
-    --bg: #0a0e1a;
-    --accent: #3b82f6;
-    --text: #f8fafc;
-    --muted: #94a3b8;
-    --warning: #d97706;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            /* FIX: Ermöglicht Scrollen auf dem Handy */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: auto; 
+            position: relative;
+            padding: 40px 0;
+        }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+        /* Hintergrund-Glow Effekte */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.25) 0%, transparent 50%);
+            z-index: 1;
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 16px;
-}
+        .container {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 24px;
+            background: rgba(18, 25, 50, 0.85);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+            z-index: 10;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+        }
 
-/* Glow */
-body::before {
-    content:'';
-    position:fixed;
-    inset:0;
-    background:
-        radial-gradient(circle at 20% 30%, rgba(59,130,246,0.25), transparent),
-        radial-gradient(circle at 80% 70%, rgba(30,58,138,0.4), transparent);
-    z-index:0;
-}
+        .maintenance-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--warning);
+            margin-bottom: 2rem;
+            background: rgba(217, 119, 6, 0.1);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(217, 119, 6, 0.3);
+        }
 
-/* Container */
-.container {
-    z-index:2;
-    width:100%;
-    max-width:900px;
-    padding:3rem 2rem;
-    border-radius:20px;
-    background:rgba(18,25,50,0.9);
-    border:1px solid rgba(59,130,246,0.25);
-    backdrop-filter:blur(30px);
-    text-align:center;
-}
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
 
-/* Badge */
-.badge {
-    display:inline-block;
-    font-size:0.75rem;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:var(--warning);
-    padding:0.6rem 1.2rem;
-    border-radius:50px;
-    border:1px solid rgba(217,119,6,0.4);
-    margin-bottom:2rem;
-}
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
 
-/* Title */
-h1 {
-    font-size: clamp(2.3rem, 7vw, 4.2rem);
-    font-weight:900;
-    letter-spacing:-1px;
-    margin-bottom:1.5rem;
-    padding:0 0.2rem;
-    line-height:1.15;
-    background:linear-gradient(135deg,#fff,#3b82f6);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
+        /* Philipp Müller Info */
+        .lead-box {
+            margin-bottom: 4rem;
+            padding: 1.5rem;
+            border-radius: 16px;
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            display: inline-block;
+        }
 
-/* Text */
-.subtitle {
-    font-size:1.05rem;
-    color:var(--muted);
-    line-height:1.7;
-    margin-bottom:2.5rem;
-}
+        .lead-tag {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
 
-/* STATUS BAR */
-.status-box {
-    margin-bottom:2.5rem;
-}
+        .lead-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+        }
 
-.progress-bar {
-    width:100%;
-    height:10px;
-    background:rgba(255,255,255,0.08);
-    border-radius:10px;
-    overflow:hidden;
-    margin-top:0.5rem;
-}
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
 
-.progress-fill {
-    height:100%;
-    width:0%;
-    background:linear-gradient(90deg,#3b82f6,#60a5fa);
-    border-radius:10px;
-    transition: width 0.4s ease;
-}
+        .status-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: left;
+        }
 
-.status-text {
-    font-size:0.9rem;
-    color:var(--muted);
-    margin-top:0.5rem;
-}
+        .timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
 
-/* Lead */
-.lead {
-    margin-bottom:2.5rem;
-    padding:1.4rem;
-    border-radius:14px;
-    border:1px solid rgba(59,130,246,0.2);
-    background:rgba(59,130,246,0.05);
-}
+        .badge { padding: 0.8rem 1.5rem; border-radius: 12px; font-weight: 700; }
+        .legacy { background: rgba(255,255,255,0.05); color: var(--text-muted); }
+        .new { background: rgba(59, 130, 246, 0.1); color: var(--accent-secondary); border: 1px solid var(--accent-secondary); }
 
-.lead .role {
-    font-size:0.7rem;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:var(--accent);
-}
+        /* STARKE ANIMATIONEN */
+        .fx-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+        
+        .code-line {
+            position: absolute;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: rgba(59, 130, 246, 0.35); /* Heller & präsenter */
+            white-space: nowrap;
+            animation: stream linear infinite;
+        }
 
-.lead .name {
-    font-size:1.3rem;
-    font-weight:800;
-}
+        .particle {
+            position: absolute;
+            background: var(--accent-secondary);
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: float linear infinite;
+        }
 
-/* Cards */
-.grid {
-    display:grid;
-    gap:1.5rem;
-    margin-bottom:2.5rem;
-}
+        @keyframes stream {
+            0% { transform: translateY(110vh); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100%); opacity: 0; }
+        }
 
-.card {
-    text-align:left;
-    padding:1.6rem;
-    border-radius:14px;
-    background:rgba(255,255,255,0.02);
-    border:1px solid rgba(255,255,255,0.05);
-}
+        @keyframes float {
+            0% { transform: translateY(110vh) scale(0); opacity: 0; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-10vh) scale(2); opacity: 0; }
+        }
 
-.card h3 {
-    color:var(--accent);
-    margin-bottom:0.5rem;
-}
-
-.card p {
-    font-size:0.9rem;
-    color:var(--muted);
-}
-
-/* Footer */
-.footer {
-    border-top:1px solid rgba(255,255,255,0.08);
-    padding-top:2rem;
-}
-
-.transition {
-    display:flex;
-    justify-content:center;
-    gap:1rem;
-}
-
-.box {
-    padding:0.7rem 1.4rem;
-    border-radius:10px;
-    font-weight:700;
-}
-
-.old {
-    background:rgba(255,255,255,0.05);
-    color:var(--muted);
-}
-
-.new {
-    background:rgba(59,130,246,0.15);
-    border:1px solid var(--accent);
-    color:var(--accent);
-}
-
-/* Mobile */
-@media (max-width:480px){
-    h1 { font-size:2.1rem; }
-}
-</style>
+        @media (max-width: 600px) {
+            .container { padding: 3rem 1.5rem; }
+            .timeline { flex-direction: column; gap: 1rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="fx-layer" id="codeStream"></div>
+    <div class="fx-layer" id="particleContainer"></div>
 
-    <div class="badge">Infrastructure Upgrade</div>
+    <div class="container">
+        <div class="maintenance-badge">System-Upgrade aktiv</div>
 
-    <h1>Wartungsarbeiten</h1>
+        <h1>Wartungsarbeiten</h1>
+        
+        <p class="subtitle">
+            Die Nextox-Infrastruktur wird auf Enterprise-Standard skaliert.<br>
+            Vorbereitung der finalen Rebrand-Phase.
+        </p>
 
-    <p class="subtitle">
-        Die Plattform wird aktuell vollständig neu aufgebaut und modernisiert.<br>
-        Im Rahmen des Rebrandings von <strong>Phlipper AG</strong> zu <strong style="color:#60a5fa;">Nextox</strong>
-        entsteht eine neue technische Basis mit Virtualisierung, Netzwerksegmentierung und zentraler Benutzerverwaltung.
-    </p>
-
-    <!-- STATUS -->
-    <div class="status-box">
-        <strong>Status: Deployment läuft</strong>
-        <div class="progress-bar">
-            <div class="progress-fill" id="progress"></div>
-        </div>
-        <div class="status-text" id="statusText">Initialisiere Infrastruktur...</div>
-    </div>
-
-    <div class="lead">
-        <div class="role">Projektleitung</div>
-        <div class="name">Philipp Müller</div>
-    </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Virtualisierung</h3>
-            <p>Neue Proxmox-Infrastruktur als technisches Fundament.</p>
+        <div class="lead-box">
+            <span class="lead-tag">Project Director / Lead</span>
+            <span class="lead-name">Philipp Müller</span>
         </div>
 
-        <div class="card">
-            <h3>Netzwerk</h3>
-            <p>Segmentierung via VLANs für saubere Trennung und Kontrolle.</p>
+        <div class="status-grid">
+            <div class="status-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--accent-secondary);">Core Infrastructure</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Migration der Phlipper AG Altlasten in die Nextox Cloud-Architektur.</p>
+            </div>
+            <div class="status-card">
+                <h3 style="margin-bottom: 0.5rem; color: var(--accent-secondary);">Security Layer</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Implementierung der neuen End-to-End Verschlüsselungsprotokolle.</p>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Identity</h3>
-            <p>Active Directory mit zentralem Zugriff und Rollenmodell.</p>
-        </div>
-
-    </div>
-
-    <div class="footer">
-        <div class="transition">
-            <div class="box old">Phlipper AG</div>
-            <div>→</div>
-            <div class="box new">Nextox</div>
+        <div class="timeline">
+            <div class="badge legacy">Phlipper AG</div>
+            <div style="color: var(--text-muted); font-size: 1.5rem;">➔</div>
+            <div class="badge new">Nextox</div>
         </div>
     </div>
 
-</div>
+    <script>
+        // Verstärkter Code-Regen
+        function createCodeLine() {
+            const stream = document.getElementById('codeStream');
+            const line = document.createElement('div');
+            line.className = 'code-line';
+            const logs = ['ACCESS_GRANTED', 'NEXTOX_ROOT_INIT', 'BYPASS_LEGACY_v2', 'ENCRYPT_DATA_STREAM', 'CORE_MIGRATION_88%', 'REBRAND_SYNC_ACTIVE', 'SECURE_NODE_01'];
+            line.textContent = logs[Math.floor(Math.random() * logs.length)];
+            line.style.left = Math.random() * 100 + '%';
+            line.style.animationDuration = (6 + Math.random() * 8) + 's'; // Schneller
+            stream.appendChild(line);
+            setTimeout(() => line.remove(), 15000);
+        }
 
-<script>
-const progress = document.getElementById("progress");
-const statusText = document.getElementById("statusText");
+        // Verstärkte Partikel
+        function createParticle() {
+            const container = document.getElementById('particleContainer');
+            const p = document.createElement('div');
+            p.className = 'particle';
+            const size = Math.random() * 6 + 2;
+            p.style.width = size + 'px';
+            p.style.height = size + 'px';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (4 + Math.random() * 7) + 's'; // Schneller
+            p.style.opacity = Math.random() * 0.6 + 0.3;
+            container.appendChild(p);
+            setTimeout(() => p.remove(), 12000);
+        }
 
-let percent = 10;
-
-const messages = [
-    "Initialisiere Infrastruktur...",
-    "Virtualisierung wird aufgebaut...",
-    "Netzwerksegmente werden konfiguriert...",
-    "Active Directory wird bereitgestellt...",
-    "Systeme werden validiert...",
-    "Deployment wird abgeschlossen..."
-];
-
-let i = 0;
-
-setInterval(() => {
-    if (percent < 95) {
-        percent += Math.random() * 10;
-        progress.style.width = percent + "%";
-    }
-
-    if (i < messages.length - 1) {
-        statusText.textContent = messages[i];
-        i++;
-    }
-}, 2000);
-</script>
-
+        // Frequenz massiv erhöht
+        setInterval(createCodeLine, 400); 
+        setInterval(createParticle, 300);
+    </script>
 </body>
 </html>
